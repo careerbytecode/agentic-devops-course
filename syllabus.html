@@ -1,0 +1,593 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Full syllabus for Agentic AI for DevOps Engineers: 8 modules, 11 hands-on labs and a capstone covering agentic foundations, LLM tooling, CI/CD, observability, IaC, security, multi-agent orchestration and an autonomous ops platform.">
+<meta property="og:title" content="Syllabus | Agentic AI for DevOps - CareerByteCode">
+<meta property="og:description" content="8 modules, hands-on labs and a capstone - from LLM fundamentals to a shipped autonomous ops platform.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://careerbytecode.github.io/agentic-ai-projects/syllabus.html">
+<meta property="og:image" content="https://careerbytecode.github.io/agentic-ai-projects/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0c1220">
+<link rel="canonical" href="https://careerbytecode.github.io/agentic-ai-projects/syllabus.html">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<title>Syllabus | Agentic AI for DevOps - CareerByteCode</title>
+<link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="shared-premium.css">
+<style>
+/* ===== SELF-HOSTED FONTS (Latin subset, variable axes preserved) ===== */
+@font-face{font-family:'Inter';font-style:normal;font-weight:300 800;font-display:optional;src:url('fonts/inter-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 800;font-display:optional;src:url('fonts/jetbrains-mono-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+
+/* ===== SYLLABUS HERO ===== */
+.syl-hero{background:linear-gradient(135deg,#060d1a 0%,#0a1628 50%,#0d2147 100%);padding:calc(var(--nav-h) + var(--sp-10)) var(--sp-6) var(--sp-8);text-align:center;position:relative;overflow:hidden;}
+.syl-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(59,130,246,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.05) 1px,transparent 1px);background-size:60px 60px;}
+.syl-hero-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;opacity:0.35;}
+.syl-hero-orb-1{width:400px;height:400px;background:rgba(37,99,235,0.3);top:-20%;left:-10%;}
+.syl-hero-orb-2{width:350px;height:350px;background:rgba(139,92,246,0.25);bottom:-20%;right:-10%;}
+.syl-hero__badge{display:inline-flex;align-items:center;gap:8px;background:rgba(59,130,246,0.12);border:1px solid rgba(59,130,246,0.25);color:#93c5fd;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:6px 18px;border-radius:var(--r-full);margin-bottom:var(--sp-3);position:relative;z-index:1;}
+.syl-hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:800;color:#fff;letter-spacing:-0.04em;margin-bottom:var(--sp-2);position:relative;z-index:1;}
+.syl-hero h1 span{background:linear-gradient(90deg,#60a5fa,#38bdf8,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.syl-hero p{color:rgba(255,255,255,0.6);max-width:580px;margin:0 auto var(--sp-5);position:relative;z-index:1;font-size:1rem;line-height:1.7;}
+.syl-hero__actions{display:flex;gap:var(--sp-2);flex-wrap:wrap;justify-content:center;position:relative;z-index:1;}
+.btn--whatsapp{background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;box-shadow:0 4px 16px rgba(37,211,102,0.3);border:none;}
+.btn--whatsapp:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(37,211,102,0.45);}
+.btn--glow{box-shadow:0 0 20px rgba(37,99,235,0.4),0 4px 20px rgba(37,99,235,0.3);}
+.btn--glow:hover{box-shadow:0 0 30px rgba(37,99,235,0.5),0 8px 30px rgba(37,99,235,0.4);}
+.btn--glass{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.85);backdrop-filter:blur(12px);}
+.btn--glass:hover{background:rgba(255,255,255,0.12);color:#fff;}
+
+/* ===== TRACK DIVIDER ===== */
+.track-divider{display:flex;align-items:center;gap:var(--sp-3);margin:var(--sp-8) 0 var(--sp-4);}
+.track-divider__line{flex:1;height:1px;background:var(--border-2);}
+.track-divider__label{display:flex;align-items:center;gap:var(--sp-2);padding:10px 24px;border-radius:var(--r-full);font-weight:700;font-size:0.85rem;letter-spacing:0.05em;white-space:nowrap;}
+.track-divider__label--devops{background:linear-gradient(135deg,rgba(37,99,235,0.15),rgba(14,165,233,0.1));border:1px solid rgba(37,99,235,0.25);color:#93c5fd;}
+.track-divider__label--ai{background:linear-gradient(135deg,rgba(139,92,246,0.15),rgba(236,72,153,0.1));border:1px solid rgba(139,92,246,0.25);color:#c4b5fd;}
+.track-divider__days{font-family:var(--font-mono);font-size:0.72rem;color:var(--text-3);font-weight:400;}
+
+/* ===== MODULE TOPICS LIST ===== */
+.topic-list{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:6px 12px;padding:var(--sp-2) 0;}
+.topic-list li{display:flex;align-items:flex-start;gap:8px;font-size:0.84rem;color:var(--text-2);line-height:1.5;padding:4px 0;}
+.topic-list li::before{content:'›';color:var(--accent-2);font-weight:700;flex-shrink:0;margin-top:1px;}
+.topic-list--ai li::before{color:var(--accent-3);}
+.topic-hands-on{display:inline-flex;align-items:center;gap:6px;margin-top:var(--sp-2);padding:8px 16px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:var(--r-md);font-size:0.8rem;color:var(--success);font-weight:600;}
+
+/* Module sub-heading */
+.mod-sub{font-size:0.78rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-3);margin:var(--sp-2) 0 6px;font-family:var(--font-mono);}
+
+/* ===== ENROLL BOTTOM ===== */
+.enroll-section{background:linear-gradient(135deg,#0a1628 0%,#0d2147 50%,#0f2d6e 100%);color:#fff;position:relative;overflow:hidden;padding:var(--sp-10) var(--sp-6);}
+.enroll-section h2{color:#fff;}
+.enroll-section h2 span{background:linear-gradient(135deg,var(--accent-2),#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.enroll-section p{color:rgba(255,255,255,0.6);}
+.cta-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;opacity:0.25;}
+.cta-orb-1{width:350px;height:350px;background:#2563eb;top:-15%;left:-8%;}
+.cta-orb-2{width:280px;height:280px;background:#8b5cf6;bottom:-15%;right:-8%;}
+.pricing-batch{display:inline-flex;align-items:center;gap:8px;background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.25);color:#fbbf24;font-size:0.82rem;font-weight:600;padding:10px 22px;border-radius:var(--r-full);margin:var(--sp-3) 0;}
+.cta-note-sm{font-size:0.77rem;color:rgba(255,255,255,0.38);margin-top:var(--sp-2);}
+
+/* ===== VALUE PANEL (fixed left, desktop) ===== */
+.value-panel{position:fixed;left:16px;top:calc(var(--nav-h,64px) + 12px);bottom:12px;z-index:50;width:252px;background:rgba(5,9,20,0.95);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(59,130,246,0.25);border-radius:18px;padding:0;box-shadow:0 4px 40px rgba(0,0,0,0.7),0 0 0 1px rgba(139,92,246,0.1),inset 0 1px 0 rgba(255,255,255,0.06);display:flex;flex-direction:column;}
+.value-panel::before{content:'';display:block;height:3px;background:linear-gradient(90deg,#2563eb,#0ea5e9,#8b5cf6);border-radius:18px 18px 0 0;flex-shrink:0;}
+.vp-scroll{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:8px;padding:0 0 4px;scrollbar-width:thin;scrollbar-color:rgba(59,130,246,0.25) transparent;}
+.vp-scroll::-webkit-scrollbar{width:3px;}
+.vp-scroll::-webkit-scrollbar-thumb{background:rgba(59,130,246,0.3);border-radius:2px;}
+.vp-header{text-align:center;padding:12px 14px 10px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+.vp-eyebrow{font-size:0.6rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.38);font-family:var(--font-mono);margin-bottom:4px;}
+.vp-price{font-size:2rem;font-weight:800;color:#fff;letter-spacing:-0.04em;line-height:1.1;}
+.vp-price sup{font-size:1rem;font-weight:700;color:#38bdf8;vertical-align:super;line-height:0;}
+.vp-hook{font-size:0.68rem;color:rgba(255,255,255,0.48);margin-top:4px;font-style:italic;line-height:1.5;}
+.vp-label{font-size:0.6rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#38bdf8;font-family:var(--font-mono);padding:6px 14px 2px;}
+.vp-item{display:flex;align-items:flex-start;gap:9px;padding:5px 14px;transition:background 0.15s;cursor:default;}
+.vp-item:hover{background:rgba(255,255,255,0.05);}
+.vp-ico{font-size:1rem;flex-shrink:0;margin-top:1px;line-height:1;}
+.vp-txt strong{display:block;font-size:0.84rem;font-weight:700;color:rgba(255,255,255,0.95);line-height:1.3;}
+.vp-txt span{font-size:0.7rem;color:rgba(255,255,255,0.42);line-height:1.45;}
+.vp-divider{height:1px;background:rgba(255,255,255,0.08);margin:4px 0;}
+.vp-footer{flex-shrink:0;padding:8px 14px 0;}
+.vp-cta{display:block;text-align:center;background:linear-gradient(135deg,#2563eb,#0ea5e9);color:#fff !important;font-size:0.84rem;font-weight:700;padding:11px;border-radius:11px;text-decoration:none !important;letter-spacing:0.03em;transition:all 0.2s;box-shadow:0 4px 20px rgba(37,99,235,0.4);}
+.vp-cta:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(37,99,235,0.55);}
+/* ===== MOBILE TOP TICKER ===== */
+.value-ticker-wrap{display:none;position:fixed;top:var(--nav-h,64px);left:0;right:0;z-index:48;background:rgba(5,9,20,0.96);border-bottom:1px solid rgba(59,130,246,0.18);overflow:hidden;height:34px;align-items:center;}
+.value-ticker{display:inline-flex;align-items:center;white-space:nowrap;animation:ticker-scroll 36s linear infinite;}
+@keyframes ticker-scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+.value-ticker .vt-item{font-size:0.7rem;color:rgba(255,255,255,0.65);padding:0 8px;font-weight:500;}
+.value-ticker .vt-sep{color:rgba(59,130,246,0.5);padding:0 2px;font-weight:700;}
+/* ===== MOBILE BOTTOM BAR ===== */
+.value-bottom-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:48;background:rgba(5,9,20,0.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid rgba(59,130,246,0.18);padding:10px 16px;align-items:center;justify-content:space-between;gap:10px;}
+.vbb-info strong{display:block;font-size:0.88rem;font-weight:700;color:#fff;}
+.vbb-info span{font-size:0.7rem;color:rgba(255,255,255,0.45);}
+.vbb-btn{display:inline-flex;align-items:center;gap:5px;background:linear-gradient(135deg,#2563eb,#0ea5e9);color:#fff !important;font-size:0.8rem;font-weight:700;padding:10px 18px;border-radius:10px;text-decoration:none !important;white-space:nowrap;flex-shrink:0;box-shadow:0 4px 16px rgba(37,99,235,0.4);}
+/* ===== SCHEDULE PANEL (fixed right, desktop) ===== */
+.schedule-panel{position:fixed;right:16px;top:calc(var(--nav-h,64px) + 12px);bottom:12px;z-index:50;width:252px;background:rgba(5,9,20,0.95);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(16,185,129,0.22);border-radius:18px;padding:0;box-shadow:0 4px 40px rgba(0,0,0,0.7),0 0 0 1px rgba(16,185,129,0.08),inset 0 1px 0 rgba(255,255,255,0.06);display:flex;flex-direction:column;}
+.schedule-panel::before{content:'';display:block;height:3px;background:linear-gradient(90deg,#10b981,#34d399,#a78bfa);border-radius:18px 18px 0 0;flex-shrink:0;}
+.sp-scroll{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:0;padding:0 0 4px;scrollbar-width:thin;scrollbar-color:rgba(16,185,129,0.25) transparent;}
+.sp-scroll::-webkit-scrollbar{width:3px;}
+.sp-scroll::-webkit-scrollbar-thumb{background:rgba(16,185,129,0.3);border-radius:2px;}
+.sp-header{text-align:center;padding:12px 14px 10px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+.sp-eyebrow{font-size:0.6rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.38);font-family:var(--font-mono);margin-bottom:4px;}
+.sp-title{font-size:1.05rem;font-weight:800;color:#fff;line-height:1.25;letter-spacing:-0.02em;}
+.sp-title-accent{background:linear-gradient(90deg,#34d399,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.sp-timezone{display:inline-flex;align-items:center;gap:5px;font-size:0.6rem;color:rgba(255,255,255,0.35);margin-top:5px;font-family:var(--font-mono);background:rgba(255,255,255,0.04);padding:3px 10px;border-radius:var(--r-full);}
+.sp-session{padding:10px 14px;}
+.sp-session + .sp-session{border-top:1px solid rgba(255,255,255,0.06);}
+.sp-session-badge{display:inline-flex;align-items:center;gap:5px;font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:3px 9px;border-radius:var(--r-full);margin-bottom:7px;}
+.sp-session--morning .sp-session-badge{background:rgba(16,185,129,0.15);color:#34d399;border:1px solid rgba(16,185,129,0.25);}
+.sp-session--aiops .sp-session-badge{background:rgba(139,92,246,0.15);color:#a78bfa;border:1px solid rgba(139,92,246,0.25);}
+.sp-live-dot{width:5px;height:5px;background:#34d399;border-radius:50%;box-shadow:0 0 5px #34d399;display:inline-block;animation:sp-blink 1.8s ease-in-out infinite;}
+.sp-ai-dot{width:5px;height:5px;background:#a78bfa;border-radius:50%;box-shadow:0 0 5px #a78bfa;display:inline-block;animation:sp-blink 1.8s ease-in-out infinite;}
+@keyframes sp-blink{0%,100%{opacity:1;}50%{opacity:0.3;}}
+.sp-session-days{font-size:0.78rem;font-weight:700;color:rgba(255,255,255,0.88);margin-bottom:2px;}
+.sp-session-time{font-size:1.1rem;font-weight:800;letter-spacing:-0.03em;margin-bottom:5px;font-family:var(--font-mono);}
+.sp-session--morning .sp-session-time{color:#34d399;}
+.sp-session--aiops .sp-session-time{color:#a78bfa;}
+.sp-session-desc{font-size:0.7rem;color:rgba(255,255,255,0.45);line-height:1.55;}
+.sp-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:7px;}
+.sp-tag{font-size:0.58rem;font-weight:600;padding:2px 7px;border-radius:5px;background:rgba(139,92,246,0.1);color:rgba(167,139,250,0.8);border:1px solid rgba(139,92,246,0.2);}
+.sp-commit{padding:8px 14px;border-top:1px solid rgba(255,255,255,0.06);display:flex;flex-direction:column;gap:7px;}
+.sp-commit-row{display:flex;align-items:flex-start;gap:8px;}
+.sp-ico{font-size:0.9rem;flex-shrink:0;line-height:1.3;}
+.sp-txt strong{display:block;font-size:0.8rem;font-weight:700;color:rgba(255,255,255,0.88);line-height:1.2;}
+.sp-txt span{font-size:0.67rem;color:rgba(255,255,255,0.4);}
+.sp-footer{flex-shrink:0;padding:8px 14px 10px;border-top:1px solid rgba(255,255,255,0.06);}
+.sp-cta{display:block;text-align:center;background:linear-gradient(135deg,#059669,#10b981);color:#fff !important;font-size:0.84rem;font-weight:700;padding:11px;border-radius:11px;text-decoration:none !important;letter-spacing:0.03em;transition:all 0.2s;box-shadow:0 4px 20px rgba(16,185,129,0.28);}
+.sp-cta:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(16,185,129,0.42);}
+@media(max-width:1100px){
+  .value-panel{display:none;}
+  .schedule-panel{display:none;}
+  .value-ticker-wrap{display:flex;}
+  .value-bottom-bar{display:flex;}
+  body{padding-bottom:64px;}
+}
+
+/* ===== PANEL-AWARE LAYOUT (desktop only) ===== */
+@media(min-width:1101px){
+  main{padding-left:275px;padding-right:275px;}
+  /* Re-expand full-bleed sections */
+  .syl-hero,.enroll-section{margin-left:-275px;margin-right:-275px;}
+  .syl-hero{padding-left:310px;padding-right:310px;}
+  .enroll-section > .container{max-width:calc(100vw - 590px);}
+  /* Stats bar */
+  .stats-bar{margin-left:-275px;margin-right:-275px;padding-left:310px;padding-right:310px;}
+}
+
+@media print{
+  .nav,.scroll-progress,.nav__mobile,.orb,.btt,.noise,.value-panel,.schedule-panel,.value-ticker-wrap,.value-bottom-bar{display:none !important;}
+  .reveal{opacity:1;transform:none;}
+  body{background:#fff;color:#000;}
+}
+</style>
+</head>
+<body>
+
+<div class="noise"></div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+<div class="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+
+<!-- VALUE PANEL -->
+<aside class="value-panel" aria-label="Agentic AI for DevOps program">
+  <div class="vp-header">
+    <div class="vp-eyebrow">Want to know more?</div>
+    <a class="vp-cta" href="https://wa.me/917620774352" target="_blank" rel="noopener noreferrer" style="margin-top:8px;">&#128172;&nbsp; Message us on WhatsApp</a>
+    <div class="vp-hook" style="margin-top:8px;">IN +91 &middot; INT +32 &mdash; quick walkthrough on WhatsApp.</div>
+  </div>
+  <div class="vp-scroll">
+    <div class="vp-label">8 Modules</div>
+    <div class="vp-item"><span class="vp-ico">&#129302;</span><div class="vp-txt"><strong>01 &middot; Foundations</strong><span>Agentic AI from first principles</span></div></div>
+    <div class="vp-item"><span class="vp-ico">&#128295;</span><div class="vp-txt"><strong>02 &middot; LLM Tooling</strong><span>kubectl, Terraform, AWS CLI</span></div></div>
+    <div class="vp-item"><span class="vp-ico">&#128640;</span><div class="vp-txt"><strong>03 &middot; Agentic CI/CD</strong><span>PR review, rollback, risk</span></div></div>
+    <div class="vp-item"><span class="vp-ico">&#128202;</span><div class="vp-txt"><strong>04 &middot; Observability</strong><span>RAG over logs, incidents</span></div></div>
+    <div class="vp-item"><span class="vp-ico">&#127959;&#65039;</span><div class="vp-txt"><strong>05 &middot; IaC with AI</strong><span>Drift, policy-as-code</span></div></div>
+    <div class="vp-item"><span class="vp-ico">&#128737;&#65039;</span><div class="vp-txt"><strong>06 &middot; Security</strong><span>Guardrails, red-team, audit</span></div></div>
+    <div class="vp-item"><span class="vp-ico">&#128376;&#65039;</span><div class="vp-txt"><strong>07 &middot; Multi-Agent</strong><span>MCP, orchestration</span></div></div>
+    <div class="vp-item"><span class="vp-ico">&#129513;</span><div class="vp-txt"><strong>08 &middot; Capstone</strong><span>Autonomous ops platform</span></div></div>
+  </div>
+  <div class="vp-footer"><a class="vp-cta" href="https://wa.me/917620774352" target="_blank" rel="noopener noreferrer">Join the Next Cohort &rarr;</a></div>
+</aside>
+
+<!-- SCHEDULE PANEL -->
+<aside class="schedule-panel" aria-label="Program format">
+  <div class="sp-header">
+    <div class="sp-eyebrow">Program Format</div>
+    <div class="sp-title">Concepts +<br><span class="sp-title-accent">Hands-On Labs</span></div>
+    <div class="sp-timezone">&#129504; No prior AI/ML required</div>
+  </div>
+  <div class="sp-scroll">
+    <div class="sp-session sp-session--morning">
+      <div class="sp-session-badge"><span class="sp-live-dot"></span>&nbsp;Total Effort</div>
+      <div class="sp-session-days">8 Modules</div>
+      <div class="sp-session-time">40&ndash;50 hrs</div>
+      <div class="sp-session-desc">Lectures, labs and self-study across the full curriculum.</div>
+    </div>
+    <div class="sp-session sp-session--aiops">
+      <div class="sp-session-badge"><span class="sp-ai-dot"></span>&nbsp;Lab Environment</div>
+      <div class="sp-session-days">API + Sandbox</div>
+      <div class="sp-session-time">Free-tier OK</div>
+      <div class="sp-session-desc">Labs need API access to an LLM provider and a sandbox - AWS free-tier or a local k3s cluster works fine.</div>
+      <div class="sp-tags"><span class="sp-tag">AWS</span><span class="sp-tag">k3s</span><span class="sp-tag">LLM API</span></div>
+    </div>
+    <div class="sp-commit">
+      <div class="sp-commit-row"><span class="sp-ico">&#127919;</span><div class="sp-txt"><strong>11 Hands-On Labs</strong><span>Real infrastructure</span></div></div>
+      <div class="sp-commit-row"><span class="sp-ico">&#129513;</span><div class="sp-txt"><strong>1 Capstone</strong><span>Ship a working platform</span></div></div>
+      <div class="sp-commit-row"><span class="sp-ico">&#128176;</span><div class="sp-txt"><strong>Earn From Your Skills</strong><span>Evaluation &rarr; community</span></div></div>
+    </div>
+  </div>
+  <div class="sp-footer"><a class="sp-cta" href="https://wa.me/32470550928" target="_blank" rel="noopener noreferrer">&#127757;&nbsp; WhatsApp (Intl +32) &rarr;</a></div>
+</aside>
+
+<div class="value-ticker-wrap" aria-hidden="true">
+  <div class="value-ticker">
+    <span class="vt-item">&#129302; Agentic AI Foundations</span><span class="vt-sep">&middot;</span>
+    <span class="vt-item">&#128295; LLM Tooling</span><span class="vt-sep">&middot;</span>
+    <span class="vt-item">&#128640; Agentic CI/CD</span><span class="vt-sep">&middot;</span>
+    <span class="vt-item">&#128202; Observability AI</span><span class="vt-sep">&middot;</span>
+    <span class="vt-item">&#127959;&#65039; IaC with AI</span><span class="vt-sep">&middot;</span>
+    <span class="vt-item">&#128737;&#65039; Security &amp; Guardrails</span><span class="vt-sep">&middot;</span>
+    <span class="vt-item">&#128376;&#65039; Multi-Agent Systems</span><span class="vt-sep">&middot;</span>
+    <span class="vt-item">&#127919; Hands-On Labs</span><span class="vt-sep">&middot;</span>
+    <span class="vt-item">&#129513; Capstone</span><span class="vt-sep">&middot;</span>
+    <span class="vt-item">&#128176; Earn From Your Skills</span><span class="vt-sep">&middot;</span>
+    <span class="vt-item">&#129302; Agentic AI Foundations</span><span class="vt-sep">&middot;</span>
+    <span class="vt-item">&#128295; LLM Tooling</span><span class="vt-sep">&middot;</span>
+    <span class="vt-item">&#128640; Agentic CI/CD</span><span class="vt-sep">&middot;</span>
+    <span class="vt-item">&#128202; Observability AI</span><span class="vt-sep">&middot;</span>
+    <span class="vt-item">&#127959;&#65039; IaC with AI</span><span class="vt-sep">&middot;</span>
+    <span class="vt-item">&#128737;&#65039; Security &amp; Guardrails</span><span class="vt-sep">&middot;</span>
+    <span class="vt-item">&#128376;&#65039; Multi-Agent Systems</span><span class="vt-sep">&middot;</span>
+    <span class="vt-item">&#127919; Hands-On Labs</span><span class="vt-sep">&middot;</span>
+    <span class="vt-item">&#129513; Capstone</span><span class="vt-sep">&middot;</span>
+    <span class="vt-item">&#128176; Earn From Your Skills</span><span class="vt-sep">&middot;</span>
+  </div>
+</div>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a class="nav__logo" href="index.html" aria-label="CareerByteCode home">
+    <picture><source srcset="cbc-logo-72.webp" type="image/webp"><img src="cbc-logo-72.png" alt="CBC" class="nav__logo-icon" width="36" height="36"></picture>
+    <span class="nav__logo-text">Career<em>ByteCode</em></span>
+  </a>
+  <div class="nav__links">
+    <a href="index.html">Home</a>
+    <a href="syllabus.html" class="active">Syllabus</a>
+    <a href="projects.html">Projects</a>
+    <a href="index.html#instructors">Instructors</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="earn.html">Earn &amp; Grow</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"></button>
+    <a class="nav__cta" href="https://wa.me/917620774352" target="_blank" rel="noopener noreferrer">Join Now</a>
+  </div>
+  <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav__mobile" role="navigation" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="syllabus.html" class="active">Syllabus</a>
+    <a href="projects.html">Projects</a>
+    <a href="index.html#instructors">Instructors</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="earn.html">Earn &amp; Grow</a>
+  <button class="theme-toggle" id="theme-toggle-mobile" aria-label="Toggle dark mode" style="margin-top:12px;"></button>
+  <a class="nav__cta" href="https://wa.me/917620774352" target="_blank" rel="noopener noreferrer" style="display:inline-flex;margin-top:12px;">Join Now</a>
+</div>
+
+<main>
+
+<!-- HERO -->
+<section class="syl-hero">
+  <div class="syl-hero-orb syl-hero-orb-1"></div>
+  <div class="syl-hero-orb syl-hero-orb-2"></div>
+  <div class="syl-hero__badge reveal">&#128218;&nbsp; Complete Program Syllabus</div>
+  <h1 class="reveal">Agentic AI for DevOps <span>Full Curriculum</span></h1>
+  <p class="reveal">Eight modules, each pairing concepts with hands-on labs against real infrastructure &mdash; from LLM fundamentals to a shipped autonomous ops platform. Work through it end-to-end or follow a focused track.</p>
+  <div class="syl-hero__actions reveal">
+    <a class="btn btn--primary btn--lg btn--magnetic btn--glow" href="https://wa.me/917620774352" target="_blank" rel="noopener noreferrer">Join Now &rarr;</a>
+    <a class="btn btn--whatsapp btn--lg btn--magnetic" href="https://wa.me/32470550928" target="_blank" rel="noopener noreferrer">&#127757;&nbsp; WhatsApp (Intl +32)</a>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar stats-bar--dark reveal" role="region" aria-label="Syllabus statistics">
+  <div class="stat"><div class="stat__num"><span style="color:var(--accent-2);" data-count-to="8">&#8212;</span></div><div class="stat__label">Modules</div></div>
+  <div class="stat"><div class="stat__num"><span style="color:var(--success);" data-count-to="11">&#8212;</span></div><div class="stat__label">Hands-On Labs</div></div>
+  <div class="stat"><div class="stat__num"><span style="color:var(--gold);" data-count-to="1">&#8212;</span></div><div class="stat__label">Capstone</div></div>
+  <div class="stat"><div class="stat__num"><span style="color:var(--accent-3);" data-count-to="4">&#8212;</span></div><div class="stat__label">Focused Tracks</div></div>
+</div>
+
+<!-- OVERVIEW -->
+<section class="section reveal" id="overview">
+<div class="container">
+  <div class="section-header">
+    <div class="section-tag">program overview</div>
+    <h2>Course <span class="text-gradient">overview</span></h2>
+  </div>
+  <div class="hero-glass-card reveal" style="max-width:820px;margin:0 auto;">
+    <p><strong>Agentic AI for DevOps Engineers</strong> takes you from LLM fundamentals to shipping autonomous ops systems. Every module pairs concepts with hands-on labs against real infrastructure tools &mdash; Kubernetes, Terraform, CI/CD and observability stacks &mdash; and closes with a capstone where you design, harden and demo a working autonomous ops platform.</p>
+    <p style="margin-top:var(--sp-2);color:var(--text-3);">By the end, you can design and deploy agentic pipelines that reduce toil, build AI-powered incident response, and harden multi-agent systems with clear trust boundaries and audit trails &mdash; all using the tools you already run in production.</p>
+  </div>
+</div>
+</section>
+
+<!-- PREREQUISITES -->
+<section class="section reveal" id="prerequisites">
+<div class="container">
+  <div class="section-header">
+    <div class="section-tag">before you start</div>
+    <h2>Prerequisites</h2>
+    <p>You'll get the most from this course with working DevOps fundamentals. The AI side is taught from the ground up.</p>
+  </div>
+  <div class="tech-card">
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px 24px;">
+      <div class="pricing-item" style="color:var(--text-2);"><span class="pi-check" style="color:var(--success);">&#10003;</span> 2+ years in a DevOps / SRE / platform role</div>
+      <div class="pricing-item" style="color:var(--text-2);"><span class="pi-check" style="color:var(--success);">&#10003;</span> Comfortable with Python or Go</div>
+      <div class="pricing-item" style="color:var(--text-2);"><span class="pi-check" style="color:var(--success);">&#10003;</span> Hands-on with CI/CD (GitHub Actions, GitLab, etc.)</div>
+      <div class="pricing-item" style="color:var(--text-2);"><span class="pi-check" style="color:var(--success);">&#10003;</span> Familiarity with Kubernetes or cloud IaC</div>
+      <div class="pricing-item" style="color:var(--text-2);"><span class="pi-check" style="color:var(--success);">&#10003;</span> Basic understanding of REST APIs</div>
+      <div class="pricing-item" style="color:var(--text-2);"><span class="pi-check" style="color:var(--success);">&#10003;</span> No prior AI/ML experience required</div>
+    </div>
+  </div>
+  <p style="text-align:center;color:var(--text-3);font-size:0.85rem;margin-top:var(--sp-3);max-width:660px;margin-left:auto;margin-right:auto;">No prior AI or machine-learning experience is required &mdash; every agentic concept is introduced from first principles and applied immediately in a lab.</p>
+</div>
+</section>
+
+<!-- TRACKS -->
+<section class="section" id="tracks">
+<div class="container">
+  <div class="section-header">
+    <div class="section-tag">choose your path</div>
+    <h2>Learning <span class="text-gradient">tracks</span></h2>
+    <p>Take the full curriculum end-to-end, or follow a focused track. Each track skips the modules not marked for it.</p>
+  </div>
+  <div class="features-grid" style="margin-top:var(--sp-4);">
+    <div class="card card--blue reveal"><div class="card__icon card__icon--blue">&#127919;</div><h4>Full Curriculum</h4><p>All 8 modules end-to-end.</p><p style="font-family:var(--font-mono);font-size:0.72rem;color:var(--accent-2);">01 &middot; 02 &middot; 03 &middot; 04 &middot; 05 &middot; 06 &middot; 07 &middot; 08</p></div>
+    <div class="card card--green reveal"><div class="card__icon card__icon--green">&#128202;</div><h4>Ops-First</h4><p>Observability, incident AI, FinOps.</p><p style="font-family:var(--font-mono);font-size:0.72rem;color:var(--success);">01 &middot; 04 &middot; 07 &middot; 08</p></div>
+    <div class="card card--purple reveal"><div class="card__icon card__icon--purple">&#128376;&#65039;</div><h4>Platform Eng.</h4><p>Agent infra, MCP, pipelines.</p><p style="font-family:var(--font-mono);font-size:0.72rem;color:var(--accent-3);">01 &middot; 02 &middot; 03 &middot; 05 &middot; 07 &middot; 08</p></div>
+    <div class="card card--gold reveal"><div class="card__icon card__icon--gold">&#128737;&#65039;</div><h4>Security-First</h4><p>Safe agents, guardrails, audit.</p><p style="font-family:var(--font-mono);font-size:0.72rem;color:var(--gold);">01 &middot; 06 &middot; 07 &middot; 08</p></div>
+  </div>
+</div>
+</section>
+
+<!-- MODULES -->
+<section class="section" id="syllabus">
+<div class="container">
+  <div class="track-divider reveal">
+    <div class="track-divider__line"></div>
+    <div class="track-divider__label track-divider__label--devops">&#128218;&nbsp; Course Modules</div>
+    <div class="track-divider__line"></div>
+  </div>
+
+  <div data-accordion-item data-open>
+    <div data-accordion-head>
+      <span>&#129302;&nbsp; Module 01 &middot; Foundations of Agentic AI</span>
+      <span class="badge badge--blue">Fundamentals &middot; 4 hrs &middot; Labs: 1</span>
+    </div>
+    <div data-accordion-body>
+      <div class="mod-sub">What makes a system “agentic”</div>
+      <ul class="topic-list">
+        <li>What makes an AI system “agentic” - autonomy, tool use, memory, planning</li>
+        <li>LLM capabilities and limits relevant to DevOps contexts</li>
+        <li>Agent architectures: ReAct, Plan-and-Execute, multi-agent orchestration</li>
+        <li>The DevOps &harr; AI feedback loop: from toil reduction to autonomous ops</li>
+        <li>Landscape survey: Copilot, Claude Code, GitHub Models, open-source agents</li>
+        <li>LangChain and LangGraph</li>
+        <li>Responsible AI</li>
+      </ul>
+      <div class="topic-hands-on">&#128640;&nbsp; <strong>Lab 1</strong> &middot; Spin up a minimal ReAct agent that queries your Prometheus metrics and explains anomalies in plain language.</div>
+    </div>
+  </div>
+
+  <div data-accordion-item>
+    <div data-accordion-head>
+      <span>&#128295;&nbsp; Module 02 &middot; LLM APIs and Tooling for Infrastructure</span>
+      <span class="badge badge--blue">Fundamentals &middot; 5 hrs &middot; Labs: 2</span>
+    </div>
+    <div data-accordion-body>
+      <div class="mod-sub">Connecting agents to your infrastructure</div>
+      <ul class="topic-list">
+        <li>Prompt engineering patterns: chain-of-thought, structured output, tool calling</li>
+        <li>Model selection for latency vs. capability trade-offs in prod pipelines</li>
+        <li>Context window management for log analysis, runbooks and long traces</li>
+        <li>Function/tool calling: AWS CLI, kubectl, Terraform, PagerDuty</li>
+        <li>Streaming and async patterns; cost budgeting in agentic loops</li>
+        <li>Multi-modal chatbot agent</li>
+        <li>Master RAG with vector embedding</li>
+      </ul>
+      <div class="topic-hands-on">&#128640;&nbsp; <strong>Lab 2</strong> &middot; Build a tool-calling agent that interprets kubectl output and proposes remediation steps.</div>
+      <div class="topic-hands-on">&#128640;&nbsp; <strong>Lab 3</strong> &middot; Extend the agent to execute approved actions against a staging cluster.</div>
+    </div>
+  </div>
+
+  <div data-accordion-item>
+    <div data-accordion-head>
+      <span>&#128640;&nbsp; Module 03 &middot; Agentic CI/CD Pipelines</span>
+      <span class="badge badge--purple">Intermediate &middot; 6 hrs &middot; Labs: 2</span>
+    </div>
+    <div data-accordion-body>
+      <div class="mod-sub">AI inside your pipelines</div>
+      <ul class="topic-list">
+        <li>AI-assisted code review: integrating LLMs into PR workflows (GitHub Actions, GitLab CI)</li>
+        <li>Automated test generation and coverage gap analysis</li>
+        <li>Intelligent build failure triage: root-cause explanation from logs</li>
+        <li>Deployment risk scoring and intelligent rollback triggers</li>
+        <li>Using Claude Code / Copilot Workspace inside CI - benefits and blast-radius limits</li>
+      </ul>
+      <div class="topic-hands-on">&#128640;&nbsp; <strong>Lab 4</strong> &middot; Wire an LLM-powered PR reviewer into a GitHub Actions workflow.</div>
+      <div class="topic-hands-on">&#128640;&nbsp; <strong>Lab 5</strong> &middot; Build a deployment agent that parses error logs, scores rollback risk and pages on-call with a reasoned summary.</div>
+    </div>
+  </div>
+
+  <div data-accordion-item>
+    <div data-accordion-head>
+      <span>&#128202;&nbsp; Module 04 &middot; Observability and Intelligent Incident Response</span>
+      <span class="badge badge--purple">Intermediate &middot; 6 hrs &middot; Labs: 2</span>
+    </div>
+    <div data-accordion-body>
+      <div class="mod-sub">From signals to summaries</div>
+      <ul class="topic-list">
+        <li>RAG over logs: embedding and querying Datadog, Loki, Splunk at scale</li>
+        <li>Anomaly detection pipelines - where LLMs add value vs. classical methods</li>
+        <li>Incident summarization, timeline reconstruction and RCA drafting</li>
+        <li>On-call copilot design: runbook retrieval, alert correlation, escalation reasoning</li>
+        <li>Multi-signal agents: correlating metrics, traces, logs and deployment events</li>
+      </ul>
+      <div class="topic-hands-on">&#128640;&nbsp; <strong>Lab 6</strong> &middot; Build a RAG pipeline over a synthetic log corpus.</div>
+      <div class="topic-hands-on">&#128640;&nbsp; <strong>Lab 7</strong> &middot; Construct an incident-response agent that correlates alerts, retrieves runbook sections and drafts a Slack incident summary.</div>
+    </div>
+  </div>
+
+  <div data-accordion-item>
+    <div data-accordion-head>
+      <span>&#127959;&#65039;&nbsp; Module 05 &middot; Infrastructure as Code with AI Assistance</span>
+      <span class="badge badge--purple">Intermediate &middot; 5 hrs &middot; Labs: 1</span>
+    </div>
+    <div data-accordion-body>
+      <div class="mod-sub">Generate, review &amp; reconcile IaC</div>
+      <ul class="topic-list">
+        <li>Terraform and Pulumi generation, review and refactoring via LLMs</li>
+        <li>Drift detection and remediation - agentic reconciliation loops</li>
+        <li>Policy-as-code generation: Rego, Sentinel, Open Policy Agent</li>
+        <li>Natural-language &rarr; IaC translation patterns and failure modes</li>
+        <li>Human-in-the-loop gates for destructive infrastructure changes</li>
+      </ul>
+      <div class="topic-hands-on">&#128640;&nbsp; <strong>Lab 8</strong> &middot; Build an agent that detects Terraform drift from state, generates a remediation plan, asks for human approval via Slack and applies only after confirmation.</div>
+    </div>
+  </div>
+
+  <div data-accordion-item>
+    <div data-accordion-head>
+      <span>&#128737;&#65039;&nbsp; Module 06 &middot; Security, Guardrails, and Responsible Deployment</span>
+      <span class="badge badge--rose">Advanced &middot; 6 hrs &middot; Labs: 1</span>
+    </div>
+    <div data-accordion-body>
+      <div class="mod-sub">Harden your agents</div>
+      <ul class="topic-list">
+        <li>Threat modeling agentic systems: prompt injection, privilege escalation, exfiltration paths</li>
+        <li>Minimal-permission agent design: scoped credentials, role boundaries, blast-radius analysis</li>
+        <li>Input/output guardrails: content filters, schema validation, rate limiting</li>
+        <li>Audit logging for agent actions - SIEM integration, non-repudiation</li>
+        <li>AI-assisted vulnerability scanning and SBOM analysis</li>
+        <li>Compliance considerations: SOC 2, ISO 27001, GDPR for LLM data flows</li>
+      </ul>
+      <div class="topic-hands-on">&#128640;&nbsp; <strong>Lab 9</strong> &middot; Red-team the agent from Module 4: identify prompt-injection vectors, add guardrails, implement structured audit logging and verify the hardened version in a test suite.</div>
+    </div>
+  </div>
+
+  <div data-accordion-item>
+    <div data-accordion-head>
+      <span>&#128376;&#65039;&nbsp; Module 07 &middot; Multi-Agent Systems and Orchestration</span>
+      <span class="badge badge--rose">Advanced &middot; 6 hrs &middot; Labs: 2</span>
+    </div>
+    <div data-accordion-body>
+      <div class="mod-sub">Orchestration that doesn't fall over</div>
+      <ul class="topic-list">
+        <li>Orchestrator-subagent patterns: delegation, handoff, result aggregation</li>
+        <li>Model Context Protocol (MCP): servers, clients, tool discovery in distributed systems</li>
+        <li>Agent memory: short-term context, long-term vector stores, episodic memory design</li>
+        <li>Failure modes in multi-agent loops: hallucination propagation, deadlock, cascading errors</li>
+        <li>Operational concerns: latency budgets, retry strategies, graceful degradation</li>
+      </ul>
+      <div class="topic-hands-on">&#128640;&nbsp; <strong>Lab 10</strong> &middot; Build a multi-agent ops system: an orchestrator delegates to specialized subagents for cost analysis, security scanning and deployment health.</div>
+      <div class="topic-hands-on">&#128640;&nbsp; <strong>Lab 11</strong> &middot; Expose the system via an MCP server so it's accessible from your IDE.</div>
+    </div>
+  </div>
+
+  <div data-accordion-item>
+    <div data-accordion-head>
+      <span>&#129513;&nbsp; Module 08 &middot; Capstone: Autonomous Ops Platform</span>
+      <span class="badge badge--gold">Capstone &middot; 8 hrs &middot; Capstone</span>
+    </div>
+    <div data-accordion-body>
+      <div class="mod-sub">Design, harden &amp; demo</div>
+      <ul class="topic-list">
+        <li>Design brief: an autonomous ops assistant for a realistic production system</li>
+        <li>Multi-agent architecture</li>
+        <li>Architecture review: capability mapping, trust boundaries, escalation logic</li>
+        <li>Integration sprint: CI/CD hooks, observability feeds, IaC tooling, Slack/PagerDuty</li>
+        <li>Chaos engineering: test the agent under load, failure injection and adversarial prompts</li>
+        <li>Retrospective: which autonomous decisions were safe, which required human gates, and why</li>
+      </ul>
+      <div class="topic-hands-on">&#128640;&nbsp; <strong>Capstone Project</strong> &middot; Ship a documented, tested autonomous ops platform. Present a 15-minute walkthrough covering architecture decisions, security posture and a live demo of agent-driven incident triage and remediation.</div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- OUTCOMES -->
+<section class="section reveal" id="outcomes">
+<div class="container">
+  <div class="section-header">
+    <div class="section-tag">what you'll achieve</div>
+    <h2>By the end, you can <span class="text-gradient">design, harden &amp; ship.</span></h2>
+    <p>You finish with the judgment to know which autonomous decisions are safe to automate and which require human gates - plus the working systems to prove it.</p>
+  </div>
+  <div class="features-grid">
+    <div class="card card--blue reveal"><div class="card__icon card__icon--blue">1</div><h4>Production-Grade Pipelines</h4><p>Design and deploy agentic pipelines that reduce toil without introducing new failure modes.</p></div>
+    <div class="card card--green reveal"><div class="card__icon card__icon--green">2</div><h4>AI Incident Response</h4><p>Build tools that surface root causes and draft remediation in minutes, not hours.</p></div>
+    <div class="card card--purple reveal"><div class="card__icon card__icon--purple">3</div><h4>Hardened Agents</h4><p>Threat-model and harden agentic systems against prompt injection, privilege abuse and data exfiltration.</p></div>
+    <div class="card card--gold reveal"><div class="card__icon card__icon--gold">4</div><h4>Multi-Agent Architecture</h4><p>Architect multi-agent systems with clear trust boundaries, human-in-the-loop gates and audit trails.</p></div>
+  </div>
+</div>
+</section>
+
+<!-- NOTES -->
+<section class="section reveal" id="notes">
+<div class="container">
+  <div class="section-header">
+    <div class="section-tag">good to know</div>
+    <h2>Notes</h2>
+  </div>
+  <div class="features-grid">
+    <div class="card card--blue reveal"><div class="card__icon card__icon--blue">&#9201;&#65039;</div><h4>Time &amp; Effort</h4><p>Approximate time includes lectures, labs and self-study. Plan for 40&ndash;50 hours across the full curriculum.</p></div>
+    <div class="card card--purple reveal"><div class="card__icon card__icon--purple">&#129514;</div><h4>Lab Environment</h4><p>Labs require API access to an LLM provider and a sandbox cloud environment. An AWS free-tier account or a local k3s cluster works fine.</p></div>
+    <div class="card card--green reveal"><div class="card__icon card__icon--green">&#129517;</div><h4>Tracks</h4><p>The Ops-First and Platform Engineering tracks skip the modules not marked for that track. The Security-First track covers Modules 01, 06, 07 and 08.</p></div>
+  </div>
+</div>
+</section>
+
+<!-- ENROLL -->
+<section class="enroll-section reveal" id="enroll">
+  <div class="cta-orb cta-orb-1"></div>
+  <div class="cta-orb cta-orb-2"></div>
+  <div class="container" style="text-align:center;">
+    <h2 class="reveal" style="font-size:clamp(1.8rem,4vw,2.8rem);">Ready to start <br><span>Module 01?</span></h2>
+    <p class="reveal" style="max-width:560px;margin:var(--sp-2) auto 0;">Message us on WhatsApp and our team will guide you through enrolment and the next cohort.</p>
+    <div class="hero__actions reveal" style="justify-content:center;">
+      <a class="btn btn--primary btn--lg btn--magnetic btn--glow" href="https://wa.me/917620774352" target="_blank" rel="noopener noreferrer">Join Now (IN +91) &rarr;</a>
+      <a class="btn btn--whatsapp btn--lg btn--magnetic" href="https://wa.me/32470550928" target="_blank" rel="noopener noreferrer">&#127757;&nbsp; WhatsApp (Intl +32)</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__title">We don't just teach AI - <em>we help you build &amp; earn</em></div>
+  <div class="footer__sub">CareerByteCode &middot; Agentic AI for DevOps Engineers</div>
+  <div class="footer__links">
+    <a href="index.html">Home</a>
+    <a href="syllabus.html">Syllabus</a>
+    <a href="projects.html">Projects</a>
+    <a href="earn.html">Earn &amp; Grow</a>
+    <a href="https://www.linkedin.com/company/careerbytecode" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://github.com/careerbytecode" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="https://youtube.com/@CareerByteCode" target="_blank" rel="noopener noreferrer">YouTube</a>
+  </div>
+  <div class="footer__email"><a href="mailto:sonali.k593@gmail.com">sonali.k593@gmail.com</a></div>
+  <div class="footer__copy">&copy; 2025 CareerByteCode. All rights reserved. &middot; Sonali Kurade &middot; +91 7620 774 352 &middot; +32 470 55 09 28</div>
+</footer>
+
+<div class="value-bottom-bar" aria-label="Contact us">
+  <div class="vbb-info"><strong>8 Modules &middot; 11 Labs &middot; 1 Capstone</strong><span>Learn &middot; Build &middot; Earn</span></div>
+  <a class="vbb-btn" href="https://wa.me/917620774352" target="_blank" rel="noopener noreferrer">Join Now &rarr;</a>
+</div>
+
+<button class="btt" aria-label="Back to top" title="Back to top">&#x2191;</button>
+
+<script src="shared-premium.js" defer></script>
+</body>
+</html>
